@@ -26,7 +26,7 @@ def main():
     # 產生一個隨機的數字
     secret_number = generate_number()
     # 紀錄猜測的次數
-    attempts = 0
+    attempt = 0
 
     print("歡迎來到猜數字遊戲！")
     print("猜一個四位數字，數字不能重複")
@@ -35,19 +35,19 @@ def main():
         # 提示使用者輸入猜測的數字
         guess = input("請輸入你猜測的數字：")
 
-        # 檢查輸入是否符合條件(四位數，且不能為數字以外的文字)
-        if len(guess) != 4 or not guess.isdigit():
+        # 檢查輸入是否符合條件(四位數，且不能重複或為數字以外的文字)
+        if len(guess) != 4 or len(set(guess)) != 4 or not guess.isdigit():
             print("請輸入正確的四位數字！")
             continue
 
         # 猜測次數增加
-        attempts += 1
+        attempt += 1
         # 比較猜測數字與秘密數字，取得A和B的數量
         A, B = compare_numbers(secret_number, guess)
 
         # 判斷是否猜中
         if A == 4:
-            print(f"恭喜你猜中了！正確答案是 {secret_number}，你總共使用了 {attempts} 次猜測。")
+            print(f"恭喜你猜中了！正確答案是 {secret_number}，你總共使用了 {attempt} 次猜測。")
             break
         else:
             # 顯示A和B的數量
