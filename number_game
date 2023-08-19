@@ -2,7 +2,7 @@ import random
 
 # 導入隨機模組，用於生成隨機數字
 
-def generate_number():
+def generate_num():
 # 產生一個隨機的四位數字
     
     return ''.join(random.sample('0123456789', 4))
@@ -29,7 +29,7 @@ def compare_numbers(random_num, guess_num):
 # 主程式
 def main():
     # 產生一個隨機的數字
-    random_secret_number = generate_number()
+    random_num = generate_num()
     # 紀錄猜測的次數
     attempt = 0
 
@@ -48,11 +48,11 @@ def main():
         # 猜測次數增加
         attempt += 1
         # 比較猜測數字與秘密數字，取得A和B的數量
-        A, B = compare_numbers(random_secret_number, guess_num)
+        A, B = compare_numbers(random_num, guess_num)
 
         # 判斷是否猜中
         if A == 4:
-            print(f"猜中了！正確答案是 {random_secret_number}，你總共猜了 {attempt} 次。")
+            print(f"猜中了！正確答案是 {random_num}，你總共猜了 {attempt} 次。")
             break
         else:
             # 顯示A和B的數量
