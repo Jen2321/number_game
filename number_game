@@ -1,7 +1,58 @@
-echo "# number_game" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Jen2321/number_game.git
-git push -u origin main
+# 導入隨機模組，用於生成隨機數字
+import random
+
+# 產生一個隨機的四位數字，數字不重複
+def generate_number():
+    # 使用random.sample函式來選擇不重複的四個數字，並將它們組合成字串
+    return ''.join(random.sample('0123456789', 4))
+
+# 比較猜測數字，計算A和B的數量
+def compare_numbers(secret, guess):
+    # 初始化A和B的計數為0
+    A = 0
+    B = 0
+
+    # 逐位比較猜測和秘密數字
+    for i in range(4):
+        if guess[i] == secret[i]:  # 如果數字和位置都正確，增加A的計數
+            A += 1
+        elif guess[i] in secret:    # 如果數字正確但位置不對，增加B的計數
+            B += 1
+
+    return A, B
+
+# 主程式
+def main():
+    # 產生一個隨機的數字
+    secret_number = generate_number()
+    # 紀錄猜測的次數
+    attempts = 0
+
+    print("歡迎來到猜數字遊戲！")
+    print("猜一個四位數字，數字不重複")
+
+    while True:
+        # 提示使用者輸入猜測
+        guess = input("請輸入你猜測的數字：")
+
+        # 檢查輸入是否符合條件(四位數字)
+        if len(guess) != 4 or not guess.isdigit():
+            print("請輸入正確的四位數字！")
+            continue
+
+        # 猜測次數增加
+        attempts += 1
+        # 比較猜測與秘密數字，取得A和B的數量
+        A, B = compare_numbers(secret_number, guess)
+
+        # 判斷是否猜中
+        if A == 4:
+            print(f"恭喜你猜中了！正確答案是 {secret_number}，你總共使用了 {attempts} 次猜測。")
+            break
+        else:
+            # 顯示A和B的數量
+            print(f"{A}A{B}B")
+
+# 如果這個檔案被執行，執行主程式
+if __name__ == "__main__":
+    main()
