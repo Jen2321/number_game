@@ -1,4 +1,4 @@
-# number_game
+# 檔案名稱：number_game
 這是一個簡單的猜數字小遊戲。
 
 ## 遊戲簡介
