@@ -4,15 +4,14 @@ Created on Fri Aug 18 21:47:09 2023
 
 @author: USER
 """
-# 導入隨機模組，用於生成隨機數字
+# 導入隨機模組
 import random
 
 
 # 產生一個隨機的四位數字
 def generate_num():   
     return ''.join(random.sample('0123456789', 4))
-
-
+    
 
 # 比較猜測數字和隨機數字
 def compare_numbers(random_num, guess_num):
@@ -30,7 +29,6 @@ def compare_numbers(random_num, guess_num):
 
 # 主程式
 def main():
-    # 產生一個隨機的數字
     random_num = generate_num()
     # 紀錄猜測的次數
     attempt = 0
