@@ -1,25 +1,27 @@
-# number_game 猜數字遊戲
+# The number guessing game
 
-這是一個簡單的猜數字小遊戲！
+This is a number guessing game!
 
-## 遊戲簡介
+## Introduction
 
-使用python寫一個猜數字的小遊戲，四位數字0-9不重複，使用者輸入答案，數字位置正確為A，數字正確位置錯誤為B。
+Create a number guessing game using Python. The game involves guessing a four-digit number where the digits range from 0 to 9 and should not repeat. The user provides their answer, and the game provides feedback where correct digits in the correct positions are represented as 'A', and correct digits in the wrong positions are represented as 'B'.
 
-## 遊戲規則
+## Game Rules
 
-1.請輸入一個猜測的四位數字，分別為0-9，數字不能重複
+1.Enter a four-digit guess, with each digit ranging from 0 to 9. Digits cannot be repeated.
 
-2.若輸入的數字重複，或格式不對，會跳出「請輸入正確的四位數字！」的提示
+2.If the entered digits are repeated or the format is incorrect, a message "請輸入正確的四位數字！" will be displayed.
 
-3.A表示數字、位置都正確的數目
+3.'A' represents the count of digits that are both correct in value and position.
 
-4.B表示數字正確但位置錯誤的數目
+4.'B' represents the count of digits that are correct in value but in the wrong position.
 
-例如：假設正確答案是1234，使用者猜出1567，則顯示1A0B。使用者若猜1256，則顯示1A1B。
+For example, if the correct answer is "1234" and the user guesses "1567", the display will be "1A0B". If the user guesses "1256", the display will be "1A1B".
 
-5.若數字與位置都正確無誤，會跳出「猜中了！正確答案是XXXX，你總共猜了XX次。」的提示
+5.If all digits are correct in both value and position, a message "猜中了！正確答案是XXXX，你總共猜了XX次。" will be displayed.
 
-### 聯絡方式
+## Contact Information
+If you have any questions or feedback, please contact me at heyy2321@gmail.com!
 
-若您有任何問題或相關意見，歡迎寄信至heyy2321@gmail.com與我聯繫！
+
+
